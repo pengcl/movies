@@ -1,0 +1,141 @@
+<app-header></app-header>
+<ion-content>
+    <div id="wrap" class="main">
+        <div id="container" class="home_movie">
+            <div class="subscribe_component">
+                <div class="component_wrap">
+                    <h3 class="component_title"><strong class="home_title">正在热映</strong><a
+                            href="javascript:;" class="tit_airmore">更多 </a>
+                    </h3>
+                    <div class="video_list flicking-viewport">
+                        <ion-slides #slides class="flicking-camera" pager="true" [options]="slideOpts">
+                            <ion-slide *ngFor="let movie of movies" class="item"><a href="javascript:;" class="link">
+                                <div class="image_wrap"><img
+                                        [src]="movie.movieHomeIcon" class="v-lazy-loaded">
+                                    <div class="bullet {{movie.isHot ? 'hot' : 'new'}}"><span class="blind">EVENT</span>
+                                    </div>
+                                </div>
+                                <div class="info"><strong class="title"> {{movie.movieName}} </strong><span
+                                        class="score"><em>6.5</em></span>
+                                    <p class="price">
+                                        <em class="cost">{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}
+                                            起</em>
+                                    </p>
+                                </div>
+                            </a>
+                            </ion-slide>
+                        </ion-slides>
+                    </div>
+                    <ul class="flicking_paging">
+                        <li (click)="slidePrev()" class="prev">
+                            <button type="button"><span class="blind">prev</span>
+                            </button>
+                        </li>
+                        <li (click)="slideNext()" class="next">
+                            <button type="button"><span class="blind">next</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content_wrap">
+                <div id="content">
+                    <div class="home_component main_lstwrap latest">
+                        <h3 class="rnd_h">
+                            <span class="title">即将上映</span>
+                            <a href="/v2/movie/products" class="btn_noti_more">更多 </a>
+                        </h3>
+                        <div class="inner lst_thum_wrap">
+                            <ul class="lst_thum">
+                                <li *ngFor="let movie of movies?.slice(0,5)">
+                                    <a href="/v2/movie/501357" class="link">
+                                        <div class="image_wrap">
+                                            <img [src]="movie.movieHomeIcon" width="147" class="v-lazy-loaded">
+                                            <span class="bullet {{movie.isHot ? 'hot' : 'new'}}"></span>
+                                        </div>
+                                        <strong>{{movie.movieName}} </strong>
+                                        <span class="score"><em>7.4</em></span>
+                                        <p class="price2 v2">
+                                            <em>票价</em><strong><span>{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}
+                                            起</span></strong></p></a>
+                                </li>
+                            </ul>
+                            <ul class="lst_thum">
+                                <li *ngFor="let movie of movies?.slice(0,5)">
+                                    <a href="/v2/movie/501357" class="link">
+                                        <div class="image_wrap">
+                                            <img [src]="movie.movieHomeIcon" width="147" class="v-lazy-loaded">
+                                            <span class="bullet {{movie.isHot ? 'hot' : 'new'}}"></span>
+                                        </div>
+                                        <strong>{{movie.movieName}} </strong>
+                                        <span class="score"><em>7.4</em></span>
+                                        <p class="price2 v2">
+                                            <em>票价</em><strong><span>{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}
+                                            起</span></strong></p></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="home_component main_lstwrap latest">
+                        <h3 class="rnd_h">
+                            <span class="title">即将下线</span>
+                            <a href="/v2/movie/products" class="btn_noti_more">更多 </a>
+                        </h3>
+                        <div class="inner lst_thum_wrap">
+                            <ul class="lst_thum">
+                                <li *ngFor="let movie of movies?.slice(10,15)">
+                                    <a href="/v2/movie/501357" class="link">
+                                        <div class="image_wrap">
+                                            <img [src]="movie.movieHomeIcon" width="147" class="v-lazy-loaded">
+                                            <span class="bullet {{movie.isHot ? 'hot' : 'new'}}"></span>
+                                        </div>
+                                        <strong>{{movie.movieName}} </strong>
+                                        <span class="score"><em>7.4</em></span>
+                                        <p class="price2 v2">
+                                            <em>票价</em><strong><span>{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}
+                                            起</span></strong></p></a>
+                                </li>
+                            </ul>
+                            <ul class="lst_thum">
+                                <li *ngFor="let movie of movies?.slice(0,5)">
+                                    <a href="/v2/movie/501357" class="link">
+                                        <div class="image_wrap">
+                                            <img [src]="movie.movieHomeIcon" width="147" class="v-lazy-loaded">
+                                            <span class="bullet {{movie.isHot ? 'hot' : 'new'}}"></span>
+                                        </div>
+                                        <strong>{{movie.movieName}} </strong>
+                                        <span class="score"><em>7.4</em></span>
+                                        <p class="price2 v2">
+                                            <em>票价</em><strong><span>{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}
+                                            起</span></strong></p></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside">
+                    <div class="home_component tvtop10"><h3 class="rnd_h"><span class="title">今日 TOP10</span><a
+                            href="/movie/ranking/realtime" class="btn_noti_more">更多</a></h3>
+                        <ul class="inner tvtop10_list _movie">
+                            <li *ngFor="let movie of movies?.slice(0,10);let i = index">
+                                <a href="/v2/movie/211828" class="link">
+                                    <div class="image_wrap">
+                                        <img [src]="movie.movieHomeIcon" width="48" height="65" class="">
+                                    </div>
+                                    <strong>
+                                        <span class="rank_no">{{i + 1}}</span>
+                                        <span class="bullet adult"></span>{{movie.movieName}}
+                                    </strong>
+                                    <em>票价 <span>{{movie.lowPrice ? (movie.lowPrice | rmb) : (19.9 | rmb)}}起</span></em></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ion-footer>
+        <ion-toolbar></ion-toolbar>
+    </ion-footer>
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header [class.scroll]="scrollTop > 0">
+    <div class="header">
+        <div class="gnb_wrap">
+            <h1 class="logo_area">
+                <a href="javascript:;" class="logo_naver">
+                    <span>壁和</span></a>
+                <a href="javascript:;" class="logo_serieson">
+                    <span>信息</span></a>
+            </h1>
+            <div class="gnb_right">
+                <a href="javascript:;" class="link_series">소설 · 만화</a>
+                <div id="gnb" class="gnb_dark_type2">
+                    <ul class="gnb_lst" id="gnb_lst" style="display: block;">
+                        <li class="gnb_login_li" style="display: inline-block;">
+                            <a class="gnb_btn_login" href="javascript:;">
+                                <span class="gnb_bg"></span>
+                                <span class="gnb_bdr"></span>
+                                <span class="gnb_txt">로그인</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="lnb_wrap">
+            <ul class="lnb_list">
+                <li class="item on">
+                    <a href="javascript:;" class="link router-link-exact-active router-link-active">首页</a>
+                </li>
+                <li class="item"><a href="javascript:;" class="link">上映电影</a>
+                </li>
+                <li class="item"><a href="javascript:;" class="link">合作影院</a>
+                </li>
+                <li class="item"><a href="javascript:;" class="link">发布电影</a>
+                </li>
+                <li class="item">
+                    <a href="javascript:;" class="link">联系我们</a>
+                </li>
+            </ul>
+            <div class="search_wrap">
+                <div class="search_area">
+                    <label class="blind">搜索</label>
+                    <input type="text" placeholder="搜索电影." class="search_input">
+                    <button type="button" class="btn_search"><span class="blind">搜索</span></button>
+                </div>
+                <div class="search_result">
+                    <ul class="result_list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button color="primary">
+          <img [routerLink]="['/home']" style=""
+               src="http://pub-template-manage.oss-cn-shenzhen.aliyuncs.com/uploads/order/20211020/19962414fbff2dfd3867ec7c6e1dfece.png">
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/home']" color="primary">
+          首页
+        </ion-button>
+        <ion-button [routerLink]="['/movie/list']" color="primary">
+          上映电影
+        </ion-button>
+        <ion-button [routerLink]="['/cinema/list']" color="primary">
+          合作影院
+        </ion-button>
+        <ion-button [routerLink]="['/movie/add']" color="primary">
+          发布电影
+        </ion-button>
+        <ion-button [routerLink]="['/contact']" color="primary">
+          联系我们
+        </ion-button>
+        <ion-button *ngIf="!user" shape="round" class="login auth" [routerLink]="['/auth/login']" color="primary">
+          登录
+        </ion-button>
+        <ion-button *ngIf="!user" shape="round" class="register auth" [routerLink]="['/auth/register']" color="primary">
+          注册
+        </ion-button>
+        <ion-button *ngIf="user" shape="round" class="register auth" (click)="logout()" color="primary">
+          退出登录
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>-->
+</ion-header>
